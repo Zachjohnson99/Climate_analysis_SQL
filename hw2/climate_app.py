@@ -7,7 +7,7 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
-
+from sqlalchemy.orm import scoped_session, sessionmaker
 from flask import Flask, jsonify
 
 #################################################
@@ -25,7 +25,9 @@ Measurement = Base.classes.measurement
 Station = Base.classes.station
 
 # Create session from Python to the DB
-session = Session(engine)
+# session = Session(engine)
+session_factory = sessionmaker(bind=engine)
+session = scoped_session(session_factory)
 
 #################################################
 # Set up Flask and landing page

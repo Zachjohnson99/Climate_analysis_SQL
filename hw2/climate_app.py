@@ -8,7 +8,7 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from sqlalchemy.orm import scoped_session, sessionmaker
-from flask import Flask, jsonify
+# from flask import Flask, jsonify
 
 #################################################
 # Database Setup
